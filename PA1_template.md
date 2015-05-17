@@ -21,7 +21,7 @@ Data must unzip before the code execute.
 
 ```r
 agg_data <- aggregate(steps ~ date, activity, sum, na.rm = TRUE)
-barplot(agg_data$steps, names.arg = agg_data$date, xlab = "Day", ylab = "Steps")
+hist(agg_data$steps, main="Total steps by day", xlab="Day", col="red")
 ```
 
 ![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
@@ -106,7 +106,7 @@ newActivity <- newActivity[,c(1:3)]
 
 ```r
 agg_data <- aggregate(steps ~ date, data=newActivity, sum)
-barplot(agg_data$steps, names.arg = agg_data$date, xlab = "Day", ylab = "Steps")
+hist(agg_data$steps, main="Total steps by day", xlab="Day", col="red")
 ```
 
 ![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png) 
@@ -126,7 +126,7 @@ median(agg_data$steps)
 ```
 ## [1] 10395
 ```
-The impact of imputing missing data on the estimates of the total daily number of steps seems changed a little bit when we look at the histogram. Median value also is changed a little bit lower but mean value is changed dramatically. It makes sense because using median suppose to change it but when we'll use mean value, it will be seen that there isn't too much change. 
+The impact of imputing missing data on the estimates of the total daily number of steps seems changed  when we look at the histogram. Median value also is changed a little bit lower but mean value is changed dramatically. It makes sense because using median suppose to change it but when we'll use mean value, it will be seen that there isn't too much change. 
 
 ## Are there differences in activity patterns between weekdays and weekends?
 - Create a new factor variable in the dataset with two levels --

@@ -2,6 +2,7 @@ activity <- read.csv("activity.csv")
 
 agg_data <- aggregate(steps ~ date, activity, sum, na.rm = TRUE)
 barplot(agg_data$steps, names.arg = agg_data$date, xlab = "Day", ylab = "Steps")
+hist(agg_data$steps, main="Total steps by day", xlab="Day", col="red")
 
 mean(agg_data$steps)
 median(agg_data$steps)
@@ -21,6 +22,7 @@ newActivity <- newActivity[,c(1:3)]
 
 agg_data <- aggregate(steps ~ date, data=newActivity, sum)
 barplot(agg_data$steps, names.arg = agg_data$date, xlab = "Day", ylab = "Steps")
+hist(agg_data$steps, main="Total steps by day", xlab="Day", col="red")
 mean(agg_data$steps)
 median(agg_data$steps)
 
